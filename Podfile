@@ -6,16 +6,17 @@ target 'workout-journal' do
   use_frameworks!
 
   # Pods for workout-journal
-  # Realtime Database
   pod 'Firebase/Database'
-  # Invites
   pod 'Firebase/Invites'
-  # Crash Reporting
   pod 'Firebase/Crash'
-  # Remote Config
   pod 'Firebase/RemoteConfig'
-  # Authentification
   pod 'Firebase/Auth'
+  pod 'Firebase/AdMob'
+  pod 'Firebase/Storage'
+
+  #  These two pods are for starter code
+  pod 'Fabric', '~> 1.7.2'
+  pod 'Crashlytics', '~> 3.9.3'
 
   target 'workout-journalTests' do
     inherit! :search_paths
