@@ -1,8 +1,14 @@
 import React, {Component} from 'react'
 import { View, StyleSheet, TextInput, Text, TouchableOpacity,
-  KeyboardAvoidingView, StatusBar} from 'react-native'
+  KeyboardAvoidingView, StatusBar, Button} from 'react-native'
+import { StackNavigator } from 'react-navigation';
+import Workouts from './Workouts';
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
+  // onPress = () => {
+  //     this.props.navigation.navigate('Workouts')
+  // }
+
   render() {
     return (
       <View style={styles.container}>
@@ -19,7 +25,6 @@ export default class LoginForm extends Component {
           autoCorrect={false}
           style={styles.input}
         />
-
         <TextInput
           placeholder="password"
           placeholderTextColor="rgba(255,255,255, 0.7)"
@@ -28,11 +33,9 @@ export default class LoginForm extends Component {
           style={styles.input}
           ref={(input)=>this.passwordInput = input}
         />
-
         <TouchableOpacity style={styles.buttonContainer}>
         <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
-
       </View>
     );
   }
@@ -60,3 +63,5 @@ const styles=StyleSheet.create({
     fontWeight: '700'
   }
 });
+
+export default LoginForm;

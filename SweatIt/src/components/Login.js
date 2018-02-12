@@ -12,8 +12,6 @@ class Login extends Component {
             source={require('../images/logo.png')}/>
             <Text style={styles.title}Sweat It/>
         </View>
-
-
         <View style={styles.formContainer}>
           <LoginForm />
         </View>
@@ -44,54 +42,5 @@ const styles=StyleSheet.create({
     opacity:0.9
   }
 });
-  /*
-  static propTypes = {
-   member: PropTypes.shape({
-     email: PropTypes.string,
-   }),
-   error: PropTypes.string,
-   loading: PropTypes.bool.isRequired,
-   onFormSubmit: PropTypes.func.isRequired,
- }
-
- static defaultProps = {
-    error: null,
-    member: {},
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: (props.member && props.member.email) ? props.member.email : '',
-      password: '',
-    };
-
-
-  }
-  render() {
-    const { loading, error } = this.props;
-
-    // Loading
-    if (loading) return <Loading />;
-
-    return (
-      <View style={styles.container}>
-          <Text>Login</Text>
-      </View>
-    );
-  }
-}
-
-
-const styles=StyleSheet.create( {
-  container: {
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-    backgroundColor:'#2c3e50',
-  },
-});*/
-
-
 
 export default Login;
