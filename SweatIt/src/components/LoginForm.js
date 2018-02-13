@@ -47,15 +47,14 @@ const styles=StyleSheet.create({
   },
   input: {
     height:40,
-    backgroundColor: 'rgba(255,255,255, 0.2)',
+    backgroundColor: '#78C2C3',
     marginBottom:10,
     color: '#fff',
     paddingHorizontal:10
   },
   buttonContainer: {
-      backgroundColor: '#2980b9',
+      backgroundColor: '#3F6699',
       paddingVertical: 15
-
   },
   buttonText: {
     textAlign:'center',
