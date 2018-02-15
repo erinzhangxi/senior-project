@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet  } from 'react-native';
 import WorkoutItem from './WorkoutItem';
+import GlobalStyles from './../styles/globalStyle';
 
 class Workouts extends Component {
   constructor(){
@@ -51,18 +52,17 @@ class Workouts extends Component {
 
   //      </div>
   //    </View>
-          <View style={styles.container}>
+          <View style={GlobalStyles.container}>
             <Text style={styles.title}>Latest Workouts</Text>
+            <View style={{flex : 1, backgroundColor: 'powderblue'}} />
+            <View style={{flex : 5, backgroundColor: 'skyblue'}} />
+            <View style={{flex : 2, backgroundColor: 'steelblue'}} />
           </View>
     );
   }
 }
 
 const styles=StyleSheet.create({
-  container: {
-    backgroundColor: '#F3ECC8',
-    flex: 1
-  },
   title: {
     backgroundColor: '#F3ECC8',
     fontSize:40,
