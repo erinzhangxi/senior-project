@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet  } from 'react-native';
 import GlobalStyles from './../styles/globalStyle';
+import SearchBar from './SearchBar';
 import {
   Container,
   Header,

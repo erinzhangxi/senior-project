@@ -12,8 +12,6 @@ import {
   Right,
   Body,
   Text,
-  List,
- ListItem,
   Icon
 } from "native-base";
 
@@ -42,7 +40,7 @@ class Profile extends Component {
        </Header>
 
        <Content padder>
-       
+
       </Content>
       </Container>
     );
