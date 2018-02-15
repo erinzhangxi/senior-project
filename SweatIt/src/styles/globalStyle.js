@@ -24,5 +24,12 @@ export default StyleSheet.create({
     textAlign:'center',
     color: "#0D1B4C",
     fontWeight: '700'
+  },
+  container: {
+    backgroundColor: '#F3ECC8',
+    flex : 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'stretch'
   }
 });

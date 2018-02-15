@@ -1,26 +1,60 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet  } from 'react-native';
+import { View, StyleSheet, Image  } from 'react-native';
+import {RkConfig, RkButton, RkText} from 'react-native-ui-kitten';
+import GlobalStyles from './../styles/globalStyle';
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Button,
+  Left,
+  Right,
+  Body,
+  Text,
+  List,
+ ListItem,
+  Icon
+} from "native-base";
 
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Profile</Text>
-      </View>
+      <Container>
+      <Header
+         style={{ backgroundColor: "powderblue" }}
+         androidStatusBarColor="steelblue"
+         iosBarStyle="light-content"
+       >
+        <Left>
+        <Button transparent onPress={() => this.props.navigation.goBack()}>
+        <Icon name="arrow-back" />
+        </Button>
+         </Left>
+         <Right>
+         <Body>
+             <Title style={styles.title}>Profile</Title>
+         </Body>
+         </Right>
+       </Header>
+
+       <Content padder>
+       
+      </Content>
+      </Container>
     );
   }
 }
 
 const styles=StyleSheet.create({
-  container: {
-    backgroundColor: '#F3ECC8',
-    flex : 1
-  },
   title: {
     fontSize:40,
     textAlign:'center',
-    color: "#2980b9",
-    fontWeight: '700'
+    color: "#FFF",
+    fontWeight: '500'
   }
 });
 
