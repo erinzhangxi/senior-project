@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image  } from 'react-native';
-import {RkConfig, RkButton, RkText} from 'react-native-ui-kitten';
 import GlobalStyles from './../styles/globalStyle';
 import {
   Container,

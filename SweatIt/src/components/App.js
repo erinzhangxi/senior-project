@@ -6,6 +6,7 @@ import {View, Text, StyleSheet} from 'react-native';
 import Workouts from './Workouts';
 import Playlist from './Playlist';
 import Profile from './Profile';
+import Home from './Home';
 
 
 class App extends React.Component {
@@ -21,6 +22,9 @@ class App extends React.Component {
 
 const RootTab = TabNavigator(
 {
+  Home: {
+      screen: Home
+  },
   Login: {
       screen: Login
   },
@@ -35,7 +39,7 @@ const RootTab = TabNavigator(
   }
 },
 {
-    initialRouteName: 'Login',
+    initialRouteName: 'Home',
 }
 );
 
