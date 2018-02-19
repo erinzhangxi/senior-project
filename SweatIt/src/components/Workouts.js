@@ -41,6 +41,14 @@ class Workouts extends Component {
     ]
     }
   }
+  _handleNavigationRequest() {
+   this.refs.nav.push({
+     component: Workouts,
+     title: 'Workouts',
+     passProps: { myProp: 'workouts' },
+   });
+ }
+
 
   render() {
      let workoutItems;

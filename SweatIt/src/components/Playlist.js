@@ -58,6 +58,14 @@ const datas = [
 ];
 
 class Playlist extends Component {
+  _handleNavigationRequest() {
+   this.refs.nav.push({
+     component: Playlist,
+     title: 'Playlist',
+     passProps: { myProp: 'playlist' },
+   });
+ }
+
   render() {
     return (
       <Container>

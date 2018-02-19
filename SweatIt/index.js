@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './src/components/App';
+import rnredux from './src/components/App';
 
-AppRegistry.registerComponent('SweatIt', () => App);
+AppRegistry.registerComponent('SweatIt', () => rnredux);

@@ -17,6 +17,13 @@ import {
 class Profile extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      user: {
+        name: 'Erin Zhang',
+        biography:'biography'
+      },
+      image: ''
+    };
   }
   render() {
     return (

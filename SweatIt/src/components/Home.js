@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, Dimensions  } from 'react-native';
-import GlobalStyles from './../styles/globalStyle';
+import { View,
+  StyleSheet,
+  Image,
+  Dimensions,
+  ImageBackground,
+  ScrollView,
+  TouchableHighlight
+} from 'react-native';
 import {
   Container,
   Header,
@@ -16,6 +22,11 @@ import {
   CardItem,
   Thumbnail
 } from "native-base";
+import GlobalStyles from './../styles/globalStyle';
+import Workouts from './Workouts';
+import Playlist from './Playlist';
+import IconFooter from './IconFooter';
+import Profile from './Profile';
 
 const logo = require("../images/logo.png");
 const deviceWidth = Dimensions.get("window").width;
@@ -25,66 +36,74 @@ class Home extends Component {
   constructor(props) {
     super(props);
   }
+
+  _navigate(route){
+    if(route== 'workouts') {
+      this.props.navigator.push({
+        component: Workouts
+      })
+    }
+
+    if(route == 'login') {
+      this.props.navigator.push({
+        component: Login
+      })
+    }
+    if(route== 'playlist') {
+      this.props.navigator.push({
+        component: Playlist
+      })
+    }
+    if(route== 'profile') {
+      this.props.navigator.push({
+        component: Profile
+      })
+    }
+  }
+
+  popAll() {
+    this.props.navigator.popToTop();
+  }
+  popOnce() {
+    this.props.navigator.pop();
+  }
+
   render() {
+    const text = 'Start Workout';
     return (
       <Container>
       <Header
-         style={{ backgroundColor: "powderblue" }}
-         androidStatusBarColor="steelblue"
-         iosBarStyle="light-content"
-       >
-        <Left>
-
-         </Left>
-         <Right>
-         <Body>
-             <Title style={styles.title}>Home</Title>
-         </Body>
-         </Right>
-       </Header>
-
-       <Content padder>
-       <Card style={styles.mb}>
-          <CardItem bordered>
-            <Left>
-              <Thumbnail source={logo} />
-              <Body>
-                <Text>NativeBase</Text>
-                <Text note>April 15, 2016</Text>
-              </Body>
-            </Left>
-          </CardItem>
-
-          <CardItem>
-            <Body>
-              <Image
-                style={{
-                  alignSelf: "center",
-                  height: 150,
-                  resizeMode: "cover",
-                  width: deviceWidth / 1.18,
-                  marginVertical: 5
-                }}
-                source={cardImage}
-              />
-              <Text>
-                NativeBase is a free and source framework that enable
-                developers to build high-quality mobile apps using React
-                Native iOS and Android apps with a fusion of ES6. NativeBase
-                builds a layer on top of React Native that provides you with
-                basic set of components for mobile application development.
-              </Text>
-            </Body>
-          </CardItem>
-          <CardItem style={{ paddingVertical: 0 }}>
-            <Left>
-              <Button transparent>
-                <Icon name="logo-github" />
-                <Text>4,923 stars</Text>
-              </Button>
-            </Left>
-          </CardItem>
-        </Card>
+      style={{ backgroundColor: "powderblue" }}
+      androidStatusBarColor="steelblue"
+      iosBarStyle="light-content"
+      >
+      </Header>
+      <Content>
+      <View>
+      <ImageBackground
+      style={{
+        height: 300
+      }}
+      source={cardImage}
+      >
+      <Button transparent onPress={() => this._navigate("workouts")}
+      style={{alignSelf:'center',justifyContent: 'center', flex:1}}>
+      <Text
+      style={{
+        backgroundColor: 'transparent',
+        textAlign: 'center',
+        fontFamily: 'Copperplate-light',
+        color: '#fff',
+        fontSize: 30,
+        padding: 40,
+      }}
+      >
+      {text}
+      </Text>
+      </Button>
+      </ImageBackground>
+      </View>
+      <IconFooter navigator={this.props.navigator} />
       </Content>
       </Container>
     );

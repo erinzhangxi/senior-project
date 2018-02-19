@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import configureStore from './../configureStore';
 import Login from './Login';
 import LoginForm from './LoginForm';
 import { TabNavigator } from 'react-navigation';
-import {View, Text, StyleSheet} from 'react-native';
-import Workouts from './Workouts';
-import Playlist from './Playlist';
-import Profile from './Profile';
+import {View, Text, StyleSheet, NavigatorIOS, TouchableHighlight} from 'react-native';
 import Home from './Home';
 
+const store = configureStore();
+const rnredux = () => (
+  <Provider store={store}>
+  <App/>
+  </Provider>
+)
 
+/*
 class App extends React.Component {
   constructor (props) {
     super(props)
@@ -42,17 +48,20 @@ const RootTab = TabNavigator(
     initialRouteName: 'Home',
 }
 );
+*/
 
-const styles=StyleSheet.create({
-  container: {
-    backgroundColor:'#ddd',
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-  },
-  header: {
-    fontSize:40,
-  },
-});
-
-export default RootTab;
+class App extends Component {
+  render() {
+    return (
+      <NavigatorIOS
+        initialRoute={{
+          component: Home,
+          title: 'Home',
+        }}
+        renderScene={this.renderScene}
+        style={{flex: 1}}
+      />
+    );
+  }
+}
+export default rnredux;
