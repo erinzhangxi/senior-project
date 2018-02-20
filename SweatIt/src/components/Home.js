@@ -27,6 +27,7 @@ import Workouts from './Workouts';
 import Playlist from './Playlist';
 import IconFooter from './IconFooter';
 import Profile from './Profile';
+import Login from './Login';
 
 const logo = require("../images/logo.png");
 const deviceWidth = Dimensions.get("window").width;
@@ -86,6 +87,8 @@ class Home extends Component {
       }}
       source={cardImage}
       >
+
+
       <Button transparent onPress={() => this._navigate("workouts")}
       style={{alignSelf:'center',justifyContent: 'center', flex:1}}>
       <Text
@@ -103,6 +106,25 @@ class Home extends Component {
       </Button>
       </ImageBackground>
       </View>
+
+
+      <Button transparent onPress={() => this._navigate("login")}
+      style={{alignSelf:'center',justifyContent: 'center', flex:1}}>
+      <Text
+      style={{
+        backgroundColor: 'transparent',
+        textAlign: 'center',
+        fontFamily: 'Copperplate-light',
+        color: 'black',
+        fontSize: 30,
+        padding: 40,
+      }}
+      >
+      Login
+      </Text>
+      </Button>
+
+
       <IconFooter navigator={this.props.navigator} />
       </Content>
       </Container>
