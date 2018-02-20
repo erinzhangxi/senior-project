@@ -87,8 +87,7 @@ class Home extends Component {
       }}
       source={cardImage}
       >
-
-
+      
       <Button transparent onPress={() => this._navigate("workouts")}
       style={{alignSelf:'center',justifyContent: 'center', flex:1}}>
       <Text
