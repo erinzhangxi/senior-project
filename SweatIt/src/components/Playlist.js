@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet  } from 'react-native';
 import GlobalStyles from './../styles/globalStyle';
+import SearchBar from './SearchBar';
 import {
   Container,
   Header,
@@ -13,33 +14,58 @@ import {
   Text,
   List,
   ListItem,
-  Icon
+  Icon,
+  Thumbnail
 } from "native-base";
+
+import pl1 from "./../images/pl1.jpg";
+import pl2 from "./../images/pl2.jpg";
+import pl3 from "./../images/pl3.jpg";
+import pl4 from "./../images/pl4.jpg";
+import pl5 from "./../images/pl5.jpg";
 
 const datas = [
   {
-    route: "recent-pl",
-    text: "Recent Playlist"
+    route: "RecentPL",
+    img: pl1,
+    text: "Recent Playlist",
+    note: "Workout - Cycling"
   },
   {
     route: "ColumnNB",
-    text: "Running"
+    text: "Running",
+    img: pl2,
+    note: "Workout - 30 Minutes Running"
   },
   {
     route: "NestedGrid",
-    text: "Dance"
+    text: "Dance",
+    img: pl3,
+    note: "Workout - Zomba"
   },
   {
     route: "CustomRow",
-    text: "strength Training"
+    text: "strength Training",
+    img: pl4,
+    note: "Workout - Power HIIT"
   },
   {
     route: "CustomCol",
-    text: "Yoga"
+    text: "Yoga",
+    img: pl5,
+    note: "Workout - Yoga"
   }
 ];
 
 class Playlist extends Component {
+  _handleNavigationRequest() {
+   this.refs.nav.push({
+     component: Playlist,
+     title: 'Playlist',
+     passProps: { myProp: 'playlist' },
+   });
+ }
+
   render() {
     return (
       <Container>
@@ -60,7 +86,7 @@ class Playlist extends Component {
          </Right>
        </Header>
 
-       <Content padder>
+       <Content>
        <List
           dataArray={datas}
           renderRow={data =>
@@ -69,10 +95,16 @@ class Playlist extends Component {
               onPress={() => this.props.navigation.navigate(data.route)}
             >
               <Left>
-                <Text>
-                  {data.text}
-                </Text>
+                <Thumbnail square size={55} source={data.img} />
               </Left>
+              <Body>
+              <Text>
+                 {data.text}
+               </Text>
+               <Text numberOfLines={1} note>
+                 {data.note}
+                 </Text>
+              </Body>
               <Right>
                 <Icon name="arrow-forward" style={{ color: "#999" }} />
               </Right>
@@ -92,7 +124,17 @@ const styles=StyleSheet.create({
     color: "#FFF",
     fontWeight: '500',
     backgroundColor: 'powderblue'
-  }
+  },
+  container: {
+   backgroundColor: "#FFF"
+ },
+ text: {
+   alignSelf: "center",
+   marginBottom: 7
+ },
+ mb: {
+   marginBottom: 15
+ }
 });
 
 export default Playlist;

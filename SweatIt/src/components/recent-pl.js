@@ -1,3 +1,5 @@
+//    this is not showing yet
+
 import React, { Component } from "react";
 import {
   Container,
@@ -11,7 +13,7 @@ import {
 } from "native-base";
 import { Grid, Row } from "react-native-easy-grid";
 
-class RowNB extends Component {
+class RecentPL extends Component {
   render() {
     return (
       <Container>
@@ -22,7 +24,7 @@ class RowNB extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Row Grid</Title>
+            <Title>Recent Playlist</Title>
           </Body>
           <Right />
         </Header>
@@ -36,4 +38,4 @@ class RowNB extends Component {
   }
 }
 
-export default RowNB;
+export default RecentPL;

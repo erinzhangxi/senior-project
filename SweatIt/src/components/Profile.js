@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image  } from 'react-native';
-import {RkConfig, RkButton, RkText} from 'react-native-ui-kitten';
 import GlobalStyles from './../styles/globalStyle';
 import {
   Container,
@@ -12,14 +11,19 @@ import {
   Right,
   Body,
   Text,
-  List,
- ListItem,
   Icon
 } from "native-base";
 
 class Profile extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      user: {
+        name: 'Erin Zhang',
+        biography:'biography'
+      },
+      image: ''
+    };
   }
   render() {
     return (
@@ -42,7 +46,7 @@ class Profile extends Component {
        </Header>
 
        <Content padder>
-       
+
       </Content>
       </Container>
     );
